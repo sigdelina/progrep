@@ -12,5 +12,5 @@ else:
             max_line = len(line)
         if len(line) <= min_line and len(line) != 0: #минимальная строка должна содержать хотя бы один символ
             min_line = len(line)
-     print('Самая короткая строка короче самой длинной в', round(max_line / min_line, 5), 'раз(а)')
+    print('Самая короткая строка короче самой длинной в', round(max_line / min_line, 5), 'раз(а)')
     
