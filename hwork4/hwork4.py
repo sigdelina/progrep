@@ -1,3 +1,4 @@
+print("Вариант 2")
 with open("text1.txt", encoding = "utf -8") as f:
     if f == "":
         print("no text in document")
