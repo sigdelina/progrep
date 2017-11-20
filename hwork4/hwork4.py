@@ -1,5 +1,5 @@
 print("Вариант 2")
-with open("text1.txt", encoding = "utf -8") as f:
+with open("text1.txt", encoding = "utf -8-sig") as f:
     lines = f.readlines()
 if len(lines) <=1: 
     print("недостаточно строк")
