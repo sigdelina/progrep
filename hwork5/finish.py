@@ -1,4 +1,4 @@
-Print("Вариант 2")
+print("Вариант 2")
 word = input("Add word: ")
 word_list = [] 
 word_list.append(word)
