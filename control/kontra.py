@@ -28,11 +28,11 @@ if word != '':
     while word != "":
         list.append(word)
         word = input()
-with open("Ozhegov.txt", "r", encoding = "utf-8")as file:
+with open("Ozhegov.txt", encoding = "utf-8")as file:
     for line in file:
           word = line.split("|")
-          for word in word_list:
-              if word[0] == word:
+          for i in range(list):
+              if word[0] == list[i]:
                   print(word[0], '-', word[1], '-', word[2])
           else:
               print("no word")
