@@ -1,4 +1,5 @@
 print("2 вариант")
+print("задание 1")
 with open("Ozhegov.txt", "r", encoding = "utf-8")as file:
     for line in file:
         word = line.split("|")
