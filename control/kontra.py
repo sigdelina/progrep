@@ -20,3 +20,19 @@ with open("Ozhegov.txt", "r", encoding = "utf-8")as file:
 print(len(a))
             
 print("задание 3")
+word = input()
+if word == "":
+    print()
+if word != '':
+    list = []
+    while word != "":
+        list.append(word)
+        word = input()
+with open("Ozhegov.txt", "r", encoding = "utf-8")as file:
+    for line in file:
+          word = line.split("|")
+          for word in word_list:
+              if word[0] == word:
+                  print(word[0], '-', word[1], '-', word[2])
+          else:
+              print("no word")
