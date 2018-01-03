@@ -8,15 +8,8 @@ else:
         letter = word.split(".")
         letters = ''.join(map(str, letter[1:]))
     print(letters+letter[0]+'ay')
-##    else:
-##        words = word.split(" ")
-##        for char in glas:
-##            word = word.replace(char, '.'+char)
-##            letter = word.split(".")
-##            letters = ''.join(map(str, letter[1:]))
-##            words = letters+letter[0]+'ay'
-##        print(words)
-##else:
+
+##
 ##    words = word. replace(" ", "|")
 ##    words = words.split("|")
 ##    print(words)
@@ -30,8 +23,4 @@ else:
 
         
         
-   #     letters = ''.join(map(str, letter[1:]))
-## #       words = letters+letter[0]+'ay'
-##        print(words)
-####        print(letters+letter[0]+'ay') letters = ''.join(map(str, letter[1:]))
-
+ #все еще пытаюсь понять, почему так не срабатывает для фразы
