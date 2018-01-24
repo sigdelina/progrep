@@ -194,7 +194,7 @@ def verse12():
     return noun_pl() + ' ' + verb_for_phrase_pl() + ' ' + infinitiv() + punctuation()
 
 def make_verse():
-    verse = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+    verse = random.choice([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11])
     if verse == 1:
         return verse1()
     if verse == 2:
