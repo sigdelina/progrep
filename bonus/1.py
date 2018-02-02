@@ -11,7 +11,6 @@ else:
         a_list.append(a)
     del a_list[-1]
     a_list = list(map(int, a_list))
-    print(a_list)
     for a in a_list:
         summa += a
         number += 1
