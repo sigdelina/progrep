@@ -23,11 +23,15 @@ def read_text(ch_file):
 def freq_word(awords):
     word_dict = {}
     for words in awords:
-        if words[-4:] == "ness":
-            if words in word_dict:
-                word_dict[words] += 1
-            else:
-                word_dict[words] = 1
+        if len(words) > 4:
+            if words[-4:] == "ness":
+                if words in word_dict:
+                    word_dict[words] += 1
+                else:
+                    word_dict[words] = 1
+        else:
+            print("слова с суффиксом -ness нет")
+            exit(0)
     return word_dict
 
 from operator import itemgetter
