@@ -1,3 +1,5 @@
+#2 вариант
+
 def name():
     ch_file = input("Введите название файла: ")
     if ch_file == '':
