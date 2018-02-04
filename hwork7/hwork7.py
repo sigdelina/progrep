@@ -26,7 +26,6 @@ def freq_word(awords):
                 word_dict[words] += 1
             else:
                 word_dict[words] = 1
-   # print("Количество слов с -ness в тексте: ", len(word_dict))
     return word_dict
 
 from operator import itemgetter
@@ -34,7 +33,6 @@ from operator import itemgetter
 def max_word(word_dict):
     wordness = []
     wordness = sorted(word_dict.items(), key=itemgetter(1))
-    #print("Самую высокую частоту имееть слово: (печатает и слово и его частоту))", wordness[-1:])
     return wordness[-1:]
 
 ch_file = name()
