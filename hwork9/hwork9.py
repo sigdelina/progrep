@@ -1,5 +1,5 @@
 #деепричастия: нашедши, найдя. причастия: нашедший, найденный, найдённый. инфинитив: найти, найтись.
-#будущее время: найду(сь), найдешь(ся), найдет(есь), найдем(ся), найдете(сь), найдут(ся)
+#будущее время: найду(сь), найдешь(ся), найдет(ся), найдем(ся), найдете(сь), найдут(ся)
 #прошедшее время: нашел(ся), нашла(сь), нашло(сь), нашли(сь)
 
 import re
@@ -7,18 +7,33 @@ import re
 print("2 вариант.\n\nНайденные слова: ")
 
 def text():
-    symbols = [".", ",", "«", "»", "!", "?", "\"","\r", '–', ", ", ". ", " - ", "...", ":", ";", "(", ")","\t", "\n", "1", "2", "3", "4", "5","6", "7", "8", "9", "0", "^", "{", "}", ">", "<", "/", "|", "%", "@", "#", "№", "$", "\n", "\t"]
-    with open("hemi.txt", "r", encoding = "utf-8") as text:
-        for lines in text:
-            for char in symbols:
-                lines = lines.replace(char, "").lower()
-            lines = lines.replace("\n", "").replace("\t", "").replace("\r", "")
-        return lines
+    symbols = [".", ",", "«", "\t", "\n", "\r", "»", "!", "?", "\"", '–', ", ", ". ", " - ", "...", ":", ";", "(", ")", "1", "2", "3", "4", "5","6", "7", "8", "9", "0", "^", "{", "}", ">", "<", "/", "|", "%", "@", "#", "№", "$"]
+    text = open("hemi.txt", encoding = "utf-8")
+    text = text.read()
+    for char in symbols:
+        text = text.replace(char, "").lower()
+    return text
     
-def find_word(lines):
+# так как из задания не очень понятно, надо ли вводить название файла, а не автоматически прочитывать его, то прикрепляю фрагмент такой программы:
+#def name():
+    #ch_file = input("Введите название файла: ")
+    #if name_f == '':
+    #    print("no name")
+    #    exit(0)
+    #else:
+    #    return name_f
+    
+##def text(name_f):
+##    symbols = [".", ",", "«", "»", "\t", "\n", "\r", "!", "?", "\"", '–', ", ", ". ", " - ", "...", ":", ";", "(", ")", "1", "2", "3", "4", "5","6", "7", "8", "9", "0", "^", "{", "}", ">", "<", "/", "|", "%", "@", "#", "№", "$"]
+##    text = open(name_f, encoding = "utf-8")
+##    text = text.read()
+##    for char in symbols:
+##        text = text.replace(char, "").lower()
+##    return text
+    
+def find_word(text):
     words = []
-    for line in lines:
-        match = re.findall('найти*[c]*\w+|найд[её]нн*[ыао]*\w+|нашедш[иае]*[йяе]*\w+|найдя|найд[уеё]*[сштм]*[сье]*[ся]*[яь]*\w+|наш[еёл]*ся\w+|нашл[иоа]*[яс]*\w+', lines) 
+    match = re.findall('найт[ис]*ь*\w*|найд[её]н*н*[ыао]*\w*|найдя|нашедш[иае]*[йяе]*\w*|наш[её]лс*я*\w*|найд[еёу][сштм]*[сье]*\w*|нашл[иоа][яс]*\w*', text) 
     for word in match:
         if word not in words:
             words.append(word)
@@ -28,8 +43,11 @@ def find_word(lines):
     else:
         for word in words:
             print(word, end = ' ')
-        return word
+        return " "
     
+#закомментированы фрагемнты для программы с введением названия файла: 
+#name_f = name()
+#w_word = text(name_f)
 w_word = text()
 find_words = find_word(w_word)
 print(find_words)
