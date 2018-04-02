@@ -30,7 +30,8 @@ def city_time(file):
     if time is None:
         print("Время для данного города не указано")
         exit(0)
-    return time
+    else:
+        return time
 
 def final_time(time):
     if time[3] == time[1]:
