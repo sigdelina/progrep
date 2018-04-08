@@ -1,4 +1,6 @@
 #1
+#я загрузила попзже, потому что приехала домой очень поздно и это все, что у меня получилось сделать за час двадцать.\n
+#до сих пор не очень понимаю, как сделать это с функцией main, но я сегодня разберусь с этим, пока то, что получилось, есть на гите
 import re
 
 def make_file():
@@ -10,9 +12,7 @@ def make_file():
         file = open(wiki_name, encoding='utf-8')
         file = file.read()
         return file
-
-from itertools import groupby
-
+    
 def find(file):
     surn = []
     surn_2 = []
