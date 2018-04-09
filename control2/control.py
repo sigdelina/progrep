@@ -17,7 +17,8 @@ def find(file):
 
 def count(counti):
     n_file = open("new_island.txt", "w", encoding="utf-8")
-    f = n_file.write(str(len(counti)))
+    f = n_file.write(str(len(counti) + 1)) #+1 так как есть пустая строка
+   #f = n_file.write(str(len(counti))) #для подсчета строк <w.*
     return f
         
 def main():
