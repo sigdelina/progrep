@@ -18,7 +18,8 @@ def find(file):
 
 def count(counti):
     n_file = open("new_island.txt", "w", encoding="utf-8")
-    f = n_file.write(str(len(counti) + 1))
+    f = n_file.write(str(len(counti) + 1)) #+1 так как в конце файла пустая строка
+    #f = n_file.write(str(len(counti))) #для подсчета строк <w.*
     return f
 
 ##2
@@ -35,7 +36,6 @@ def slova(find):
 
 def slova_file(freq):
     b = list(freq.keys())
-    print(b)
     with open("new_slovar_file.txt", "w", encoding="utf-8") as s_file:
         s_file.write(str(b))
     return s_file
