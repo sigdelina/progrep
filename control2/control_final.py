@@ -37,7 +37,8 @@ def slova(find):
 def slova_file(freq):
     b = list(freq.keys())
     with open("new_slovar_file.txt", "w", encoding="utf-8") as s_file:
-        s_file.write(str(b))
+        words = word + " " + "\n"
+        s_file.write(words)
     return s_file
 
 def main():
