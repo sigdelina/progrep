@@ -1,3 +1,4 @@
+#2 ВАРИАНТ
 import os
 import re
 
