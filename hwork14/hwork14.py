@@ -1,7 +1,7 @@
 import re
 
 def read_file():
-    elements = ';:()\n\t\r%$#@/\<>«»\",–_{}[]'
+    elements = ';:()\n\t\r%$#@/\<>«»\",–_—{}[]'
     with open('cheh.txt', encoding='utf-8') as text_sen:
         text = text_sen.read()
         for char in elements:
