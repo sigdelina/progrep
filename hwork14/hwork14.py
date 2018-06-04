@@ -9,8 +9,8 @@ def read_file():
     return text
 
 def text_file(text):
-    sent = re.compile(r'[.|!|?|…]')
-    result = [line.strip() for line in sent.split(text)]
+    sntc = re.compile(r'[.|!|?|…]')
+    result = [line.strip() for line in sntc.split(text)]
     return result
 
 def findings(result):
