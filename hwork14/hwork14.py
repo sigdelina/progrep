@@ -24,9 +24,10 @@ def findings(result):
 def sentences(sent):
     a = []
     for sen in sent:
+        print('Предложение: \n\t', sen, '\nCлова для преждожения с заглавной буквы:') #вывожу с предложениями, так как в задании указано вывести слова для предложения
         words = re.findall('[А-Я]\w*', sen)
         for el in words:
-            print(el)
+            print('\t', el)
     return ''
     
 
