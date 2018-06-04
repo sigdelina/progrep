@@ -17,14 +17,14 @@ def findings(result):
     sent = []
     for lines in result:
         line = lines.split(' ')
-        if len(line) >= 10:
+        if len(line) >= 10: #находит предложение от 10 слов, если такое возможно согласно заданию
             sent.append(lines)
     return sent
 
 def sentences(sent):
     a = []
     for sen in sent:
-        words = re.findall('[А-Я]\w+', sen)
+        words = re.findall('[А-Я]\w*', sen)
         for el in words:
             print(el)
     return ''
