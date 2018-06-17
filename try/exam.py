@@ -28,27 +28,14 @@ def slovar(freq):
     for key in sorted(freq.keys()):
         written = "%s\t%s" % (key, freq[key])
         file = f.write(written + '\n')
+    print('Частотный словарь записан в файл')
     return f.close()
-
-def sush(f):
-    first = []
-    line = f.split('\n')
-    print(line)
-##    for line in f:
-##        print(line)
-##        a = re.search('<ana lex=".*" gr="S,.*=(.*твор)', line)
-##        if a:
-##            print(a)
-##            b = re.findall(a, '<w>\n(<ana.*\n)*[А-аЯ-я]*\n*</w>')
-##            fi = first.append(b)
-
     
 def main():
     f = file()
     r = reg(f)
     freq = freu(f)
     s = slovar(freq)
-    sus = sush(f)
-    print("среднее количество разборов (тэг ana) на слово (тэг w): ", r, '\n', freq, '\n', sus)
+    print("среднее количество разборов (тэг ana) на слово (тэг w): ", r)
     
 main()
