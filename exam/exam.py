@@ -9,6 +9,9 @@ def file():
     for root, dirs, files in os.walk(path):
         for f in files:
             file = path + f
+            from pathlib import Path
+            filename = file
+            new_filename = Path(filename).stem + ".txt"
             with open(file,'r', encoding='utf=8') as fin:
                 fin = fin.readlines()
                 for line in fin:
@@ -18,12 +21,10 @@ def file():
                     find3 = re.sub('<>|?/\\', '', find4)
                     if find3 != None:
                         obj.append(find3)
-              #  filename = file(".txt")
-                #from pathlib import Path filename = file new_filename = Path(filename).stem + ".txt" 
-            #os.path.splitext(file.html)[0]+".txt" 
-                        with open("new.txt",'w', encoding='cp1251') as fi:
+             with open(new_filename,'w', encoding='cp1251') as fi:
                             fi.write(str(obj))
     return fi
+##лучше закоментить первое, чтобы проверить второе, потому что первое не работает
 
 def sec():
     obj = []
