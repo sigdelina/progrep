@@ -16,30 +16,16 @@ def file():
                     find2 = re.sub('[A-zZ-a]', '', find)
                     find4 = re.sub(r'<w><ana.*</ana>','', find2)
                     find3 = re.sub('<>|?/\\', '', find4)
-                #a = find3 + ' ' 
-                #print(a)
-               # r = re.compile('</ana>(.*)</w>(.*)(<w>),')
-                  #  find2 = re.sib('</ana>(.*)</w>(.*)(<w>)', '', find)
-              #  print(find2)
                     if find3 != None:
-                 #   print()
-                  #  print(obj)
-                #if find != None:
-                        #obj.append(find3)
+  
+                        obj.append(find3)
               #  filename = file(".txt")
                 #from pathlib import Path filename = file new_filename = Path(filename).stem + ".txt" 
             #os.path.splitext(file.html)[0]+".txt" 
                         with open("new.txt",'w', encoding='cp1251') as fi:
-                            fi.write(find3)
-                        print(fi)
-   # return fi
-  #  return obj, file
+                            fi.write(str(obj))
+    return fi
 
-#def write_t(obj, file):
-   # with open(file,'w', encoding='cp1251') as fin:
-    #    fin.write(obj)
-     #   return fin
-     
 def sec():
     obj = []
     slo = {}
