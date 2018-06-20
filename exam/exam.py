@@ -17,7 +17,6 @@ def file():
                     find4 = re.sub(r'<w><ana.*</ana>','', find2)
                     find3 = re.sub('<>|?/\\', '', find4)
                     if find3 != None:
-  
                         obj.append(find3)
               #  filename = file(".txt")
                 #from pathlib import Path filename = file new_filename = Path(filename).stem + ".txt" 
