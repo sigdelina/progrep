@@ -10,7 +10,7 @@ for root, dirs, files in os.walk(path):
     for file in files:
         if ".ann" in file:
             filename = str(file)
-          #  print(root, dirs, file)
+            print(root, dirs, file)
             final_ann = os.path.join(root, file)
             with open(final_ann, encoding="utf-8") as file:
                 annot_txt = file.read()
@@ -20,7 +20,7 @@ for root, dirs, files in os.walk(path):
               #  print(line)
                 find_tag = re.search(r'T.*?Tense_choice.*?\D', line)
                 if find_tag is not None:
-                    reg_mistake = re.search(r'\s\d*?\s\d*?\s(\D+)', line, flags=re.DOTALL)
+                    reg_mistake = re.search(r'T\d.*\d\s(\D+)', line, flags=re.DOTALL)
                     tag_mistake = reg_mistake.group(1)
                     position = clean_text.index(line)
                    # print(tag_mistake)
@@ -29,7 +29,7 @@ for root, dirs, files in os.walk(path):
                    # print(pos_for_wrong)
                     сorrection = clean_text[pos_for_wrong]
                     #print(сorrection)
-                    reg_correct = re.search(r'#.*T\d*?\s(\D+)',  сorrection, flags=re.DOTALL)
+                    reg_correct = re.search(r'#.*T\d.*\s(\D+)',  сorrection, flags=re.DOTALL)
                     if reg_correct is None:
                         correct_mistake = ' - '
                     else:
