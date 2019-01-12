@@ -6,7 +6,7 @@ with open('sentences.csv', 'w', encoding='utf-8') as file:
     row = '%s\t%s\t%s\t%s\t%s\t%s\t%s\n'
     file.write(row % ('Path', 'Tag', 'Full sentence', 'Tagged mistake', 
                    'Corrected mistake', 'Correct/incorrect', 'Group'))
-path = './data/' # прописывает путь
+path = './data/exam2014' # прописывает путь
 # обходит дерево
 for root, dirs, files in os.walk(path):
     for file in files:
@@ -27,32 +27,31 @@ for root, dirs, files in os.walk(path):
                     position = clean_text.index(line)
                    # print(tag_mistake)
                    # print(position)
-                    pos_for_wrong = position + 1 # позиция строки с ошибкой
+                    pos_for_wrong = position + 1 # позиция с ошибкой + 1
                    # print(pos_for_wrong)
                     сorrection = clean_text[pos_for_wrong]
                     #print(сorrection)
-                    tgg = re.search(r'^T\d.*\d\s(.*)', correction, flags=re.DOTALL)
-                    tag_correct = re.search(r'#.*T\d.*\s(.*)',  сorrection, flags=re.DOTALL)
-                    #if tag_correct is None:
-                    #    pos_for_wrong += 1
+                   # tgg = re.search(r'^T\d.*\d\s(.*)', correction, flags=re.DOTALL)
+                    tag_correct = re.search(r'#.*T\d.*\s(.*)', сorrection, flags=re.DOTALL)
+#                     #if tag_correct is None:
+#                     #    pos_for_wrong += 1
                     
 
                     
-                    if tgg is None:
-                        pos_for_wrong += 1 # позиция строки с ошибкой
-                        сorrection = clean_text[pos_for_wrong]
-                        tgg = re.search(r'^T\d.*\d\s(.*)', correction, flags=re.DOTALL)
-                        while tgg is None:
-                            tag_correct = re.search(r'#.*T\d.*\s(.*)',  сorrection, flags=re.DOTALL)
-                            
-                    
-                    
-                    
-                 #   if tag_correct is None:
-                 #       correct = ' - '
-                 #   else:
-                 #       correct = tag_correct.group(1)
-                   # print(correct)
+# #                     if tgg is None:
+# #                         pos_for_wrong += 1 # позиция строки с ошибкой
+# #                         сorrection = clean_text[pos_for_wrong]
+# #                         tgg = re.search(r'^T\d.*\d\s(.*)', correction, flags=re.DOTALL)
+#                     while tgg is None:
+#                         pos_for_wrong += 1 # позиция строки с ошибкой
+#                     pos = pos_for_wrong -1
+#                     correction = clean_text[pos]
+#                     tag_correct = re.search(r'#.*T\d.*\s(.*)',  сorrection, flags=re.DOTALL)
+#                     if tag_correct is None:
+#                         correct = ' - '
+#                     else:
+#                         correct = tag_correct.group(1)
+#                     print(correct)
                   #  tag_place = re.search(r'\s(\d*?)\s(\d*?)\s', line, flags=re.DOTALL)
                   #  tag_start = tag_place.group(1)
                   #  tag_end = tag_place.group(2)
