@@ -22,7 +22,7 @@ for root, dirs, files in os.walk(path):
               #  print(line)
                 find_tag = re.search(r'T.*?Tense_choice.*?', clean_text[i]) # для строки с нужным тегом
                 if find_tag is not None:
-                    tag_id = re.search(r'(T\d*?)\s', line)
+                    tag_id = re.search(r'(T\d*?)\s', clean_text[i])
                     identif = tag_id.group(1)
                     tag_id_path = os.path.join(final_ann[7:-4], identif)
                     print(tag_id_path)
@@ -35,11 +35,7 @@ for root, dirs, files in os.walk(path):
                         correct = tag_correct.group(1)
                     tag_place = re.search(r'\s\d.*\d?\s', clean_text[i], flags=re.DOTALL)
                     position = tag_place.group()
-                    pos1 = position.split()
-                    print(pos1)
-                    #tag_start = tag_place.group(1)
-                    #tag_end = tag_place.group(2)
-                # пополенение таблицы
+                    # пополенение таблицы
                     with open('sentences.csv', 'a', encoding='utf-8') as f:
                         row = '%s\tTense_choice\t%s\t%s\t%s\t%s\t%s\n'
                         f.write(row % (tag_id_path, "th", mistake, correct, 'h', 't'))
