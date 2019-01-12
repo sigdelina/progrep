@@ -33,6 +33,12 @@ for root, dirs, files in os.walk(path):
                         correct = ''
                     else:
                         correct = tag_correct.group(1)
+                    tag_place = re.search(r'\s\d.*\d?\s', clean_text[i], flags=re.DOTALL)
+                    position = tag_place.group()
+                    pos1 = position.split()
+                    print(pos1)
+                    #tag_start = tag_place.group(1)
+                    #tag_end = tag_place.group(2)
                 # пополенение таблицы
                     with open('sentences.csv', 'a', encoding='utf-8') as f:
                         row = '%s\tTense_choice\t%s\t%s\t%s\t%s\t%s\n'
