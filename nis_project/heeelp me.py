@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[82]:
-
-
 import re
 import os
 
@@ -28,7 +22,7 @@ for root, dirs, files in os.walk(path):
               #  print(line)
                 find_tag = re.search(r'T.*?Tense_choice.*?\D', line) # для строки с нужным тегом
                 if find_tag is not None:
-                    tag_mistake = re.search(r'T\d.*\d\s(\D+)', line, flags=re.DOTALL) # ошибка
+                    tag_mistake = re.search(r'T\d.*\d\s(.*)', line, flags=re.DOTALL) # ошибка
                     mistake = tag_mistake.group(1)
                     position = clean_text.index(line)
                    # print(tag_mistake)
@@ -37,7 +31,7 @@ for root, dirs, files in os.walk(path):
                    # print(pos_for_wrong)
                     сorrection = clean_text[pos_for_wrong]
                     #print(сorrection)
-                    tag_correct = re.search(r'#.*T\d.*\s(\D+)',  сorrection, flags=re.DOTALL)
+                    tag_correct = re.search(r'#.*T\d.*\s(.*)',  сorrection, flags=re.DOTALL)
                     if tag_correct is None:
                         correct = ' - '
                     else:
@@ -65,4 +59,3 @@ for root, dirs, files in os.walk(path):
                     
                     
             
-
