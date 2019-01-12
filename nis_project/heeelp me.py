@@ -31,30 +31,53 @@ for root, dirs, files in os.walk(path):
                    # print(pos_for_wrong)
                     сorrection = clean_text[pos_for_wrong]
                     #print(сorrection)
+                    tgg = re.search(r'^T\d.*\d\s(.*)', correction, flags=re.DOTALL)
                     tag_correct = re.search(r'#.*T\d.*\s(.*)',  сorrection, flags=re.DOTALL)
-                    if tag_correct is None:
-                        correct = ' - '
-                    else:
-                        correct = tag_correct.group(1)
+                    #if tag_correct is None:
+                    #    pos_for_wrong += 1
+                    
+
+                    
+                    if tgg is None:
+                        pos_for_wrong += 1 # позиция строки с ошибкой
+                        сorrection = clean_text[pos_for_wrong]
+                        tgg = re.search(r'^T\d.*\d\s(.*)', correction, flags=re.DOTALL)
+                        while tgg is None:
+                            tag_correct = re.search(r'#.*T\d.*\s(.*)',  сorrection, flags=re.DOTALL)
+                            
+                    
+                    
+                    
+                 #   if tag_correct is None:
+                 #       correct = ' - '
+                 #   else:
+                 #       correct = tag_correct.group(1)
                    # print(correct)
-                   # tag_place = re.search(r'\s(\d*?)\s(\d*?)\s', line, flags=re.DOTALL)
-                   # tag_start = tag_place.group(1)
-                   # tag_end = tag_place.group(2)
+                  #  tag_place = re.search(r'\s(\d*?)\s(\d*?)\s', line, flags=re.DOTALL)
+                  #  tag_start = tag_place.group(1)
+                  #  tag_end = tag_place.group(2)
                    # print(tag_start, '\n', tag_end)
-                   # text_file = filename[0:-3] + 'txt'
-                   # final_text = os.path.join(root, text_file)
-                   # with open(final_text, encoding="utf-8") as ftxt:
-                   #     clear_text = ftxt.read()
-                   # clean = clear_text.replace('\n','')
+                  #  text_file = filename[0:-3] + 'txt'
+                  #  final_text = os.path.join(root, text_file)
+                  #  with open(final_text, encoding="utf-8") as ftxt:
+                  #      clear_text = ftxt.read()
+                  #  clean = clear_text.replace('\n','')
                     
                     #вот здесь нужно это предложение вытащить из файла и чет я запуталась
                     
-                    #text_string = list(clean.replace(' ', ''))
-                   # print(text_string)
+                  #  text_string = list(clean.replace(' ', ''))
+                  #  print(clean)
+                  #  mistake_in_txt = len(clean)
+                  #  clean_list = clean.split('.')
+                  #  for sentence in clean_list:
+                  #      if clean.find(sentence) <= int(tag_start) and clean.find(sentence) + len(sentence) >= int(tag_end):
+                  #          print(sentence)
+                    #print(clean_list)
+                  #  print(mistake_in_txt)
                 # пополенение таблицы
                     with open('sentences.csv', 'a', encoding='utf-8') as f:
                         row = '%s\tTense_choice\t%s\t%s\t%s\t%s\t%s\n'
-                        f.write(row % (final_ann, 'gt', mistake, correct, 'h', 't'))
+                        f.write(row % (final_ann, "th", mistake, correct, 'h', 't'))
                         
                     
                     
